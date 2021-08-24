@@ -46,7 +46,6 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   height: 200px;
   width:200px;
-  margin: 10rem 5rem;
   overflow: hidden;
 }
 
@@ -85,4 +84,42 @@ input[type=range]::-webkit-slider-thumb {
 .pie_segment:after{
   opacity: var(--over50, 0)
 }
+
+.pie_label_color{
+  background: var(--bg, #e74c3c);
+  width: 3rem;
+  height: 3rem;
+}
+.legende{
+  margin-top: 1rem;
+  display: flex;
+}
+.legende p{
+  font-size: 1.5rem;
+}
+.grafieken{
+  background-color: rgba(0,0,255,0.1);
+  padding: 3rem;
+  margin: 8rem 8rem 0rem 0rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+h2{
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+.kleur{
+  background-color: white;
+  display: grid;
+}
+
+.auto{
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  border-radius: 100%;
+}
+
 /*https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e
