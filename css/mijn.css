@@ -45,14 +45,28 @@ input[type=range]::-webkit-slider-thumb {
   background-color: #639;
   border-radius: 100%;
   position: relative;
-  height: 20rem;
-  width:20rem;
+  height: 200px;
+  width:200px;
   margin: 10rem 5rem;
+  overflow: hidden;
 }
 
 .pie_segment{
-  position: absolute;
   height: 100%;
+  overflow: hidden;
+  position: absolute;
+/*  border: 5px dashed orange; */
+  transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--offset, 0)* 1deg));
+  transform-origin: 50% 100%;
   width: 100%;
-  border: 5px dashed orange;
+}
+
+.pie_segment:before{
+  background: #f00;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transform: translate(0, 100%) rotate(calc(var(--value, 45)* 1deg));
+  transform-origin: 50% 0;
+  width: 100%;
 }
