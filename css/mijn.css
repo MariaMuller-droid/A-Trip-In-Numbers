@@ -42,7 +42,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .pie{
-  background-color: #639;
   border-radius: 100%;
   position: relative;
   height: 200px;
@@ -52,24 +51,38 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .pie_segment{
-
+  --a: calc(var(--over50, 0) * -100%);
+  --b: calc((1 + var(--over50, 0)) * 100%);
   --degrees: calc( (var(--offset, 0) / 100) * 360);
   height: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: absolute;
   transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees)* 1deg));
   transform-origin: 50% 100%;
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+  clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
   width: 100%;
+  opacity: 0.5;
+}
+
+.pie_segment:hover{
+  opacity: 1;
+}
+.pie_segment:before, .pie_segment:after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: var(--bg, #e74c3c);
 }
 
 .pie_segment:before{
   --degrees: calc( (var(--value, 45) / 100) * 360);
-  background: #f00;
-  content: '';
-  height: 100%;
-  position: absolute;
   transform: translate(0, 100%) rotate(calc(var(--degrees)* 1deg));
   transform-origin: 50% 0;
-  width: 100%;
+}
+
+.pie_segment:after{
+  opacity: var(--over50, 0)
 }
 /*https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e
