@@ -52,21 +52,24 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .pie_segment{
+
+  --degrees: calc( (var(--offset, 0) / 100) * 360);
   height: 100%;
   overflow: hidden;
   position: absolute;
-/*  border: 5px dashed orange; */
-  transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--offset, 0)* 1deg));
+  transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees)* 1deg));
   transform-origin: 50% 100%;
   width: 100%;
 }
 
 .pie_segment:before{
+  --degrees: calc( (var(--value, 45) / 100) * 360);
   background: #f00;
   content: '';
   height: 100%;
   position: absolute;
-  transform: translate(0, 100%) rotate(calc(var(--value, 45)* 1deg));
+  transform: translate(0, 100%) rotate(calc(var(--degrees)* 1deg));
   transform-origin: 50% 0;
   width: 100%;
 }
+/*https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e
