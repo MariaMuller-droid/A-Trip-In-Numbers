@@ -49,7 +49,9 @@ input[type=range]::-webkit-slider-thumb {
   overflow: hidden;
 }
 
-.pie_segment{
+
+
+.fab_segment, .num_segment{
   --a: calc(var(--over50, 0) * -100%);
   --b: calc((1 + var(--over50, 0)) * 100%);
   --degrees: calc( (var(--offset, 0) / 100) * 360);
@@ -62,12 +64,13 @@ input[type=range]::-webkit-slider-thumb {
   clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
   width: 100%;
   opacity: 0.5;
+
 }
 
-.pie_segment:hover{
+.fab_segment:hover, .num_segment:hover{
   opacity: 1;
 }
-.pie_segment:before, .pie_segment:after{
+.fab_segment:before, .fab_segment:after, .num_segment:before, .num_segment:after{
   content: '';
   height: 100%;
   position: absolute;
@@ -75,21 +78,23 @@ input[type=range]::-webkit-slider-thumb {
   background: var(--bg, #e74c3c);
 }
 
-.pie_segment:before{
+
+.fab_segment:before, .num_segment:before{
   --degrees: calc( (var(--value, 45) / 100) * 360);
   transform: translate(0, 100%) rotate(calc(var(--degrees)* 1deg));
   transform-origin: 50% 0;
 }
 
-.pie_segment:after{
+
+.fab_segment:after, .num_segment:after{
   opacity: var(--over50, 0)
 }
 
 .pie_label_color{
-  background: var(--bg, #e74c3c);
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
+
 .legende{
   margin-top: 1rem;
   display: flex;
@@ -112,14 +117,18 @@ h2{
 
 .kleur{
   background-color: white;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .auto{
   width: 1rem;
   height: 1rem;
-  background-color: black;
+  background-color: red;
   border-radius: 100%;
 }
+
+
 
 /*https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e
