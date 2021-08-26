@@ -1,15 +1,16 @@
+let mijnAfstand = 1;
 // slider
 
 var inputElement = document.getElementById('customRangeInput');
 
 inputElement.oninput = setInput;
 inputElement.onchange = setInput;   // IE fix
-
+veranderenAfstand()
 function setInput(){
     inputElement.value = closestValue(inputElement.value);
 }
 
-var validValues = [0,10000,50000,75000];
+var validValues = [0,25,100,200,275,365,535,750,900,1010];
 function closestValue(input)
 {
     var differences = [];
@@ -17,22 +18,31 @@ function closestValue(input)
         differences.push( Math.abs(validValues[i] - input));
 
     var index = indexOfSmallest(differences);
+
+    // slider verplaatsen afstand veranderen
+      mijnAfstand = index + 1;
+      console.log(mijnAfstand);
+      veranderenAfstand();
+
     return validValues[index];
+
 }
 
 function indexOfSmallest(inputArray) {
     var lowest = 0;
     for (var i = 1; i < inputArray.length; i++) {
         if (inputArray[i] < inputArray[lowest]) lowest = i;
+
     }
     return lowest;
 }
 
-// juiste percentages
+function veranderenAfstand(){
+// pie charts
+
 
 let offsetVariabele = 0;
 let offsetVariabeleTwee = 0;
-let mijnAfstand = 3;
 let q = 0;
 let z = 0;
 let fabrikanten = [
@@ -58,28 +68,35 @@ let nummerplaten = [
 ]
 
 let mijnFabrikantenSegment = document.querySelectorAll('.fab_segment')
-
-
-while(mijnFabrikantenSegment.length> q){
-  mijnFabrikantenSegment[q].style.setProperty('--value', fabrikanten[q][mijnAfstand] ) ;
-  mijnFabrikantenSegment[q].style.setProperty('--offset', offsetVariabele ) ;
-  offsetVariabele = offsetVariabele + fabrikanten[q][mijnAfstand];
-  q++;
-}
-
-
 let mijnNummerplaatSegment = document.querySelectorAll('.num_segment')
 
-while(mijnNummerplaatSegment.length> z){
-  mijnNummerplaatSegment[z].style.setProperty('--value', nummerplaten[z][mijnAfstand] ) ;
 
-    if(nummerplaten[z][mijnAfstand]>50){
-      mijnNummerplaatSegment[z].style.setProperty('--over50', 1) ;
-    }
-  mijnNummerplaatSegment[z].style.setProperty('--offset', offsetVariabeleTwee) ;
-  offsetVariabeleTwee = offsetVariabeleTwee + nummerplaten[z][mijnAfstand];
-  z++;
-}
+  console.log('het werkt');
+  console.log(mijnAfstand);
+  while(mijnFabrikantenSegment.length> q){
+    mijnFabrikantenSegment[q].style.setProperty('--value', fabrikanten[q][mijnAfstand] ) ;
+    mijnFabrikantenSegment[q].style.setProperty('--offset', offsetVariabele ) ;
+    offsetVariabele = offsetVariabele + fabrikanten[q][mijnAfstand];
+    q++;
+  }
+
+
+  while(mijnNummerplaatSegment.length> z){
+    mijnNummerplaatSegment[z].style.setProperty('--value', nummerplaten[z][mijnAfstand] ) ;
+
+      if(nummerplaten[z][mijnAfstand]>50){
+        mijnNummerplaatSegment[z].style.setProperty('--over50', 1) ;
+      }
+    mijnNummerplaatSegment[z].style.setProperty('--offset', offsetVariabeleTwee) ;
+    offsetVariabeleTwee = offsetVariabeleTwee + nummerplaten[z][mijnAfstand];
+    z++;
+  }
+
+
+
+
+
+
 
 // kleur
 let mijnKleurContainer = document.querySelector('.kleur');
@@ -98,7 +115,16 @@ let kleur = [
         ['meetfout', 0, 1, 0, 0],
 ]
 
+
+
 let lol = kleur[0][mijnAfstand];
+let mijnAutos = document.querySelectorAll('.auto');
+let m = 0;
+
+while(mijnAutos.length> m){
+  mijnAutos[m].remove();
+  m++;
+}
 
 while(n< aantalAutos[mijnAfstand - 1]){
       auto = document.createElement('div');
@@ -117,4 +143,6 @@ while(n< aantalAutos[mijnAfstand - 1]){
       mijnKleurContainer.appendChild(auto);
 
   n++;
+}
+
 }
