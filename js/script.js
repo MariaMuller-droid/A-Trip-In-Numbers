@@ -32,7 +32,7 @@ function indexOfSmallest(inputArray) {
 
 let offsetVariabele = 0;
 let offsetVariabeleTwee = 0;
-let mijnAfstand = 2;
+let mijnAfstand = 3;
 let q = 0;
 let z = 0;
 let fabrikanten = [
@@ -98,16 +98,22 @@ let kleur = [
         ['meetfout', 0, 1, 0, 0],
 ]
 
-
+let lol = kleur[0][mijnAfstand];
 
 while(n< aantalAutos[mijnAfstand - 1]){
       auto = document.createElement('div');
       auto.classList.add('auto');
-      if(n< kleur[variabeleKleur][mijnAfstand]){
-          auto.style.background = kleur[0][variabeleKleur]
-      } else if(kleur[variabeleKleur][mijnAfstand]<n<) {
 
+      if(n < lol ){
+          auto.style.background = kleur[variabeleKleur][0];
+          console.log( kleur[variabeleKleur][0])
+      } else{
+        variabeleKleur ++;
+        lol = lol + kleur[variabeleKleur][mijnAfstand];
+        console.log(lol);
+        auto.style.background = kleur[variabeleKleur][0];
       }
+
       mijnKleurContainer.appendChild(auto);
 
   n++;

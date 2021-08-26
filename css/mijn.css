@@ -127,6 +127,7 @@ h2{
   height: 1rem;
   background-color: red;
   border-radius: 100%;
+  border: 1pt solid black;
 }
 
 
