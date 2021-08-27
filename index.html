@@ -21,56 +21,61 @@
 							<p id="plaats">Antwerpen Stad</p>
 							<p id="tijd">10h - 10h11</p>
 					</div>
-					<div class="weather">
-								<p>23</p>
+					<div class="omgeving">
+								<div class="weather">
+
+								</div>
+								<p id="weerBesch">Cloudy </p> <br>
+								<p id="temperatuur">23°C</p>
 					</div>
 
 
 		<input id="customRangeInput" type="range" min="0" max="1070" step="5" list="valid-options" value="25" ng-model="selectedValue" />
+
     <div class="grafieken">
 			<h2>Auto Fabrikant</h2>
     	<div class="auto_fab">
 						<div class="pie">
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:orange; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:pink; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:red; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:green; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:blue; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:gray; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:black; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:purple; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:#07B053; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg: #BBD09F; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:#496E5B; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:#6EF500; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:#547E11; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg: #87d6bd; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:#F9F8F8; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg: #fcb603; --over50:0;"></div>
 						</div>
 						<div class="legende">
-							<div class="pie_label_color" style= "background: orange; "> <p>Duits</p>	</div>
-							<div class="pie_label_color" style= "background: pink; "> <p>Frans</p>	</div>
-							<div class="pie_label_color" style= "background: red; ">	<p>Italiaans</p>  </div>
-							<div class="pie_label_color" style= "background: green; "> <p>Amerikaans</p>	</div>
-							<div class="pie_label_color" style= "background: blue; "> <p>Koreaans</p>	</div>
-							<div class="pie_label_color" style= "background: gray; ">	<p>Japans</p>  </div>
-							<div class="pie_label_color" style= "background: black; ">	<p>Anders</p>  </div>
-							<div class="pie_label_color" style= "background: purple; ">	<p>Meetfout</p>  </div>
+							<div class="pie_label_color" style= "background: #07B053; "> <p>Duits</p>	</div>
+							<div class="pie_label_color" style= "background: #BBD09F ; color: black;"> <p>Frans</p>	</div>
+							<div class="pie_label_color" style= "background: #496E5B; ">	<p>Italiaans</p>  </div>
+							<div class="pie_label_color" style= "background: #6EF500; color: black;"> <p>Amerikaans</p>	</div>
+							<div class="pie_label_color" style= "background: #547E11; "> <p>Koreaans</p>	</div>
+							<div class="pie_label_color" style= "background: #87d6bd ; color: black; ">	<p>Japans</p>  </div>
+							<div class="pie_label_color" style= "background: #F9F8F8; color: black;">	<p>Anders</p>  </div>
+							<div class="pie_label_color" style= "background: #fcb603; ">	<p>Meetfout</p>  </div>
 						</div>
 
     	</div>
 			<h2>Nummerplaat</h2>
 			<div class="nummerplaat">
 						<div class="pie">
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:orange; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:pink; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:red; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:green; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:blue; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:gray; --over50:0;"></div>
-									<div class="num_segment" style="--offset: 0; --value: 0; --bg:black; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#07B053; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#BBD09F; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#496E5B; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#87d6bd; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#547E11; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#6EF500; --over50:0;"></div>
+									<div class="num_segment" style="--offset: 0; --value: 0; --bg:#F9F8F8; --over50:0;"></div>
 						</div>
 						<div class="legende">
-							<div class="pie_label_color" style= "background: orange; "> <p>Duits</p>	</div>
-							<div class="pie_label_color" style= "background: pink; "> <p>Frans</p>	</div>
-							<div class="pie_label_color" style= "background: red; ">	<p>Belgisch</p>  </div>
-							<div class="pie_label_color" style= "background: green; "> <p>Nederlands</p>	</div>
-							<div class="pie_label_color" style= "background: blue; "> <p>Engels</p>	</div>
-							<div class="pie_label_color" style= "background: gray; ">	<p>Luxemburg</p>  </div>
-							<div class="pie_label_color" style= "background: black; ">	<p>Anders</p>  </div>
+							<div class="pie_label_color" style= "background: #07B053; "> <p>Duits</p>	</div>
+							<div class="pie_label_color" style= "background: #BBD09F; color: black;"> <p>Frans</p>	</div>
+							<div class="pie_label_color" style= "background: #496E5B; ">	<p>Belgisch</p>  </div>
+							<div class="pie_label_color" style= "background: #87d6bd; color: black;"> <p>Nederlands</p>	</div>
+							<div class="pie_label_color" style= "background: #547E11; "> <p>Engels</p>	</div>
+							<div class="pie_label_color" style= "background: #6EF500; color: black;">	<p>Luxemburg</p>  </div>
+							<div class="pie_label_color" style= "background: #F9F8F8; color: black;">	<p>Anders</p>  </div>
 						</div>
 			</div>
 			<h2 id="titelkleur">Kleur van de Auto's</h2>

@@ -1,53 +1,79 @@
 body{
-  font-family: sans-serif;
-  background-color: gray;
+  font-family: monospace;
+  background-color: black;
+  color: #b7ea65;
 }
 
 h1{
   font-size: 4rem;
   margin: 2rem 2rem 2rem 3rem;
-}
-.weather{
-background-color: blue;
-width: 18rem;
-height: 12rem;
-position: absolute;
-right: 0;
-top: 3rem;
+  color:white;
 }
 
+.omgeving{
+  position: absolute;
+  right: 0;
+  top: 3rem;
+  width: 18rem;
+  height: 12rem;
+}
+.weather{
+background-size: 100%;
+background-repeat: no-repeat;
+border-radius: 100%;
+background-position: center;
+width: 8rem;
+height: 8rem;
+margin: 0 5rem;
+}
+
+#temperatuur{
+  font-size: 1.5rem;
+  text-align: center;
+
+}
+
+#weerBesch{
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
 .info{
   margin-left: 3rem;
   font-size: 1.5rem;
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
 }
 
 input[type=range] {
-  height: 150px;
-  padding: 0 50px;
+  height: 200px;
+  padding: 0 0px;
   -webkit-appearance: none;
-  width: 90%;
-  margin: 0 4%;
-  background: white;
+  width: 85%;
+  margin: 0 7%;
+  background-image: url(../img/Road-01.png);
+  background-position: center;
+  background-size: 100%;
 }
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 2px #A6A6A6;
-  border: 2px solid #F27B7F;
-  height: 30px;
-  width: 50px;
+
+  height: 0;
+  padding-bottom: 2%;
+  width: 3%;
   border-radius: 0px;
-  background: #FF96AB;
+
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -11px;
+  margin-top: -40px;
+  background-image: url(../img/auto-02.png);
+  background-size: 100%;
 }
 
 .pie{
   border-radius: 100%;
   position: relative;
-  height: 200px;
-  width:200px;
+  height: 150px;
+  width:150px;
   overflow: hidden;
   grid-row: 2;
 }
@@ -108,12 +134,15 @@ input[type=range]::-webkit-slider-thumb {
   font-size: 1.5rem;
 }
 .grafieken{
-  background-color: rgba(255,255,255,0.1);
+  /*background-color: rgba(255,255,255,0.1); */
+
   padding: 3rem;
-  margin: 5rem 8rem 0rem 0rem;
+  margin-left: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-auto-rows: 1fr 5fr;
+  grid-auto-rows: 0.5fr 5fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 0rem;
 }
 
 h2{
@@ -134,14 +163,27 @@ h2{
 }
 
 .auto{
-  width: 2rem;
-  height: 2rem;
-  background-color: red;
-  border-radius: 0.2rem;
-  border: 1pt solid black;
+  width: 3rem;
+  height: 3rem;
+  background-size: 100%;
+
   margin: 5px;
 }
 
+@media (max-width:1300px){
+input[type=range]::-webkit-slider-thumb{
+  margin-top: -35px;
+}
+ }
+ @media (max-width:1150px){
+ input[type=range]::-webkit-slider-thumb{
+   margin-top: -30px;
+ }
+  }
 
-
+  @media (max-width:1000px){
+  input[type=range]::-webkit-slider-thumb{
+    margin-top: -25px;
+  }
+   }
 /*https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e
