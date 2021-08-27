@@ -28,8 +28,8 @@
 
 		<input id="customRangeInput" type="range" min="0" max="1070" step="5" list="valid-options" value="25" ng-model="selectedValue" />
     <div class="grafieken">
+			<h2>Auto Fabrikant</h2>
     	<div class="auto_fab">
-						<h2>Auto Fabrikant</h2>
 						<div class="pie">
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:orange; --over50:0;"></div>
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:pink; --over50:0;"></div>
@@ -37,17 +37,23 @@
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:green; --over50:0;"></div>
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:blue; --over50:0;"></div>
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:gray; --over50:0;"></div>
-								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:yellow; --over50:0;"></div>
 								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:black; --over50:0;"></div>
+								<div class="fab_segment" style="--offset: 0; --value: 0; --bg:purple; --over50:0;"></div>
 						</div>
 						<div class="legende">
-							<div class="pie_label_color">	</div>
-							<p>Duitse Merken</p>
+							<div class="pie_label_color" style= "background: orange; "> <p>Duits</p>	</div>
+							<div class="pie_label_color" style= "background: pink; "> <p>Frans</p>	</div>
+							<div class="pie_label_color" style= "background: red; ">	<p>Italiaans</p>  </div>
+							<div class="pie_label_color" style= "background: green; "> <p>Amerikaans</p>	</div>
+							<div class="pie_label_color" style= "background: blue; "> <p>Koreaans</p>	</div>
+							<div class="pie_label_color" style= "background: gray; ">	<p>Japans</p>  </div>
+							<div class="pie_label_color" style= "background: black; ">	<p>Anders</p>  </div>
+							<div class="pie_label_color" style= "background: purple; ">	<p>Meetfout</p>  </div>
 						</div>
 
     	</div>
+			<h2>Nummerplaat</h2>
 			<div class="nummerplaat">
-						<h2>Nummerplaat</h2>
 						<div class="pie">
 									<div class="num_segment" style="--offset: 0; --value: 0; --bg:orange; --over50:0;"></div>
 									<div class="num_segment" style="--offset: 0; --value: 0; --bg:pink; --over50:0;"></div>
@@ -58,10 +64,16 @@
 									<div class="num_segment" style="--offset: 0; --value: 0; --bg:black; --over50:0;"></div>
 						</div>
 						<div class="legende">
-							<div class="pie_label_color">	</div>
-							<p>Duits</p>
+							<div class="pie_label_color" style= "background: orange; "> <p>Duits</p>	</div>
+							<div class="pie_label_color" style= "background: pink; "> <p>Frans</p>	</div>
+							<div class="pie_label_color" style= "background: red; ">	<p>Belgisch</p>  </div>
+							<div class="pie_label_color" style= "background: green; "> <p>Nederlands</p>	</div>
+							<div class="pie_label_color" style= "background: blue; "> <p>Engels</p>	</div>
+							<div class="pie_label_color" style= "background: gray; ">	<p>Luxemburg</p>  </div>
+							<div class="pie_label_color" style= "background: black; ">	<p>Anders</p>  </div>
 						</div>
 			</div>
+			<h2 id="titelkleur">Kleur van de Auto's</h2>
 			<div class="kleur">
 
 			</div>
