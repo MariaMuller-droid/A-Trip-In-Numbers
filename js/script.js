@@ -1,7 +1,12 @@
 let mijnAfstand = 1;
 // slider
 
+let mijnUitleg = document.getElementById('UX');
 var inputElement = document.getElementById('customRangeInput');
+
+
+
+
 
 inputElement.oninput = setInput;
 inputElement.onchange = setInput;   // IE fix
@@ -37,7 +42,25 @@ function indexOfSmallest(inputArray) {
     return lowest;
 }
 
+
 function veranderenAfstand(){
+
+  if(mijnAfstand === 1){
+    function uitleg(){
+        mijnUitleg.classList.toggle('onzichtbaar');
+
+    }
+    inputElement.addEventListener('mouseover', uitleg);
+    inputElement.addEventListener('mouseout', uitleg);
+
+  } else{
+    console.log('het werkt');
+    mijnUitleg.classList.add('onzichtbaar');
+    inputElement.removeEventListener('mouseover', uitleg);
+    inputElement.removeEventListener('mouseout', uitleg);
+  }
+
+
 // pie charts
 
 
@@ -70,7 +93,6 @@ let mijnFabrikantenSegment = document.querySelectorAll('.fab_segment')
 let mijnNummerplaatSegment = document.querySelectorAll('.num_segment')
 
 
-  console.log('het werkt');
   console.log(mijnAfstand);
   while(mijnFabrikantenSegment.length> q){
     mijnFabrikantenSegment[q].style.setProperty('--value', fabrikanten[q][mijnAfstand] ) ;
@@ -159,18 +181,32 @@ while(mijnKleurSegment.length> q){
 
 function grafiekTonen(){
     m=0;
-    mijnKleurLegende.classList.toggle('onzichtbaar');
-    mijnKleurGrafiek.classList.toggle('onzichtbaar');
+    mijnKleurLegende.classList.remove('onzichtbaar');
+    mijnKleurGrafiek.classList.remove('onzichtbaar');
+
     mijnAutos = document.querySelectorAll('.auto');
     while(mijnAutos.length> m){
-      mijnAutos[m].classList.toggle('onzichtbaar');
+      mijnAutos[m].classList.add('onzichtbaar');
       m++;
     }
+    mijnKleurContainer.style.setProperty('display', 'block') ;
 
 }
 
+function grafiekVerbergen(){
+  m=0;
+  mijnKleurLegende.classList.add('onzichtbaar');
+  mijnKleurGrafiek.classList.add('onzichtbaar');
+  mijnAutos = document.querySelectorAll('.auto');
+  while(mijnAutos.length> m){
+    mijnAutos[m].classList.remove('onzichtbaar');
+    m++;
+  }
+      mijnKleurContainer.style.setProperty('display', 'flex') ;
+}
+
 mijnKleurContainer.addEventListener('mouseover', grafiekTonen);
-mijnKleurContainer.addEventListener('mouseout', grafiekTonen);
+mijnKleurContainer.addEventListener('mouseout', grafiekVerbergen);
 
 m = 0;
 
@@ -189,7 +225,7 @@ while(n< aantalAutos[mijnAfstand - 1]){
       } else{
         variabeleKleur ++;
         lol = lol + kleur[variabeleKleur][mijnAfstand];
-        console.log(lol);
+
         auto.style.backgroundImage = "url('img/" +kleur[variabeleKleur][0]+".png')"  ;
       }
 
