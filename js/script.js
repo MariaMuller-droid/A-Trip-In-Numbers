@@ -47,7 +47,7 @@ let q = 0;
 let z = 0;
 let fabrikanten = [
         ['duits', 50, 39.1, 33.3, 39.3, 33.9, 35, 26.3, 19.2, 28.8],
-        ['frans', 30, 19.5, 16.7, 34.4, 30.5, 33.7, 39.1, 49.2, 43.3],
+        ['frans', 30, 19.5, 16.7, 34.4, 30.5, 33.8, 39.1, 49.2, 43.3],
         ['italiaans', 3.3, 4.7, 5.1, 4.9, 1.7, 2.4, 3, 2.3, 5.8],
         ['amerikaans', 3.3, 6.3, 7.7, 3.3, 6.8, 4.8, 6.8, 9.2, 4.8],
         ['koreaans', 6.7, 7.8, 5.1, 1.6, 5.1, 2.4, 0.8, 1.5, 1.9],
@@ -57,7 +57,7 @@ let fabrikanten = [
 ]
 
 let nummerplaten = [
-        ['duitsland', 10, 0, 2.6, 0, 0, 8.4, 3, 1.5, 4.8],
+        ['duitsland', 10, 0, 2.6, 0, 0, 8.5, 3, 1.5, 4.8],
         ['frankrijk', 0, 0, 6.4, 26.2, 54.2, 39.8, 84.2, 90, 86.5],
         ['belgie', 60, 82, 59, 14.8, 15.3, 12, 3, 3.1, 2.9],
         ['nederland', 30, 18, 24.4, 29.5, 16.9, 33.7, 5.3, 4.6, 2.9],
@@ -135,17 +135,44 @@ let kleurPercentages = [
         ['black', 23.3, 23.4, 28.2, 29.5, 25.4, 25.3, 27.8, 23.8, 26],
         ['white', 23.3, 15.6, 20.5, 4.9, 23.7, 19.3, 24.8, 26.9, 20.2],
         ['blue', 10, 10.2, 9 , 11.5, 13.6, 10.8, 6, 6.9, 9.6],
-        ['brown', 3.3, 5.5, 9, 6.6, 3.4, 3.6, 3.8, 1.5, 3.8],
+        ['brown', 3.4, 5.5, 9, 6.6, 3.4, 3.6, 3.8, 1.5, 3.8],
         ['red', 0, 4.7, 7.7, 1.6, 6.8, 8.4, 7.5, 6.2, 7.7],
         ['anders', 0, 3.1, 1.3, 0, 5.1, 6.0, 0, 6.2, 1],
         ['meetfout', 0, 0.8, 0, 0, 0, 1.2, 0, 1.5, 0],
 ]
 
-
-
+q = 0;
+offsetVariabele = 0;
+let mijnKleurSegment = document.querySelectorAll('.kl_segment');
+let mijnKleurGrafiek = document.querySelector('.kleur .pie');
+let mijnKleurLegende = document.querySelector('.kleur .legende');
 let lol = kleur[0][mijnAfstand];
 let mijnAutos = document.querySelectorAll('.auto');
 let m = 0;
+
+while(mijnKleurSegment.length> q){
+  mijnKleurSegment[q].style.setProperty('--value', kleurPercentages[q][mijnAfstand] ) ;
+  mijnKleurSegment[q].style.setProperty('--offset', offsetVariabele ) ;
+  offsetVariabele = offsetVariabele + kleurPercentages[q][mijnAfstand];
+  q++;
+}
+
+function grafiekTonen(){
+    m=0;
+    mijnKleurLegende.classList.toggle('onzichtbaar');
+    mijnKleurGrafiek.classList.toggle('onzichtbaar');
+    mijnAutos = document.querySelectorAll('.auto');
+    while(mijnAutos.length> m){
+      mijnAutos[m].classList.toggle('onzichtbaar');
+      m++;
+    }
+
+}
+
+mijnKleurContainer.addEventListener('mouseover', grafiekTonen);
+mijnKleurContainer.addEventListener('mouseout', grafiekTonen);
+
+m = 0;
 
 while(mijnAutos.length> m){
   mijnAutos[m].remove();
