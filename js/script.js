@@ -13,6 +13,7 @@ inputElement.onchange = setInput;   // IE fix
 veranderenAfstand()
 function setInput(){
     inputElement.value = closestValue(inputElement.value);
+
 }
 
 var validValues = [25,100,200,275,365,535,750,900,1010];
@@ -26,7 +27,9 @@ function closestValue(input)
 
     // slider verplaatsen afstand veranderen
       mijnAfstand = index + 1;
-      console.log(mijnAfstand);
+
+
+
       veranderenAfstand();
 
     return validValues[index];
@@ -45,20 +48,8 @@ function indexOfSmallest(inputArray) {
 
 function veranderenAfstand(){
 
-  if(mijnAfstand === 1){
-    function uitleg(){
-        mijnUitleg.classList.toggle('onzichtbaar');
 
-    }
-    inputElement.addEventListener('mouseover', uitleg);
-    inputElement.addEventListener('mouseout', uitleg);
 
-  } else{
-    console.log('het werkt');
-    mijnUitleg.classList.add('onzichtbaar');
-    inputElement.removeEventListener('mouseover', uitleg);
-    inputElement.removeEventListener('mouseout', uitleg);
-  }
 
 
 // pie charts
@@ -221,7 +212,7 @@ while(n< aantalAutos[mijnAfstand - 1]){
 
       if(n < lol ){
           auto.style.backgroundImage = "url('img/" +kleur[variabeleKleur][0]+".png')"  ;
-          console.log( kleur[variabeleKleur][0])
+        
       } else{
         variabeleKleur ++;
         lol = lol + kleur[variabeleKleur][mijnAfstand];
@@ -233,5 +224,25 @@ while(n< aantalAutos[mijnAfstand - 1]){
 
   n++;
 }
+
+// uitleg
+
+function uitleg(){
+    mijnUitleg.classList.remove('onzichtbaar');
+}
+
+function uitlegWeg(){
+    mijnUitleg.classList.add('onzichtbaar');
+}
+
+
+if(mijnAfstand> 1){
+mijnUitleg.classList.add('weg');
+}
+
+  inputElement.addEventListener('mouseover', uitleg);
+  inputElement.addEventListener('mouseout', uitlegWeg);
+
+
 
 }
