@@ -212,7 +212,7 @@ while(n< aantalAutos[mijnAfstand - 1]){
 
       if(n < lol ){
           auto.style.backgroundImage = "url('img/" +kleur[variabeleKleur][0]+".png')"  ;
-        
+
       } else{
         variabeleKleur ++;
         lol = lol + kleur[variabeleKleur][mijnAfstand];
@@ -243,6 +243,8 @@ mijnUitleg.classList.add('weg');
   inputElement.addEventListener('mouseover', uitleg);
   inputElement.addEventListener('mouseout', uitlegWeg);
 
-
-
+// Afstand
+  let weergaveDrukte = document.getElementById('drukte');
+  let drukte = [0.67, 1.28, 0.78, 0.85, 0.62, 0.42, 0.67, 1.08, 0.87];
+  weergaveDrukte.innerHTML = drukte[mijnAfstand -1] + " nieuwe auto's per km";
 }
