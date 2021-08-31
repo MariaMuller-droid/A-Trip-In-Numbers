@@ -224,27 +224,32 @@ while(n< aantalAutos[mijnAfstand - 1]){
 
   n++;
 }
+// Afstand
+  let weergaveDrukte = document.getElementById('drukte');
+  let drukte = [0.67, 1.28, 0.78, 0.85, 0.62, 0.42, 0.67, 1.08, 0.87];
+  weergaveDrukte.innerHTML = drukte[mijnAfstand -1] + " nieuwe auto's per km";
+  let hoeveel = document.getElementById('hoeveel');
 
 // uitleg
 
 function uitleg(){
     mijnUitleg.classList.remove('onzichtbaar');
+    hoeveel.classList.add('onzichtbaar');
 }
 
 function uitlegWeg(){
     mijnUitleg.classList.add('onzichtbaar');
+    hoeveel.classList.remove('onzichtbaar');
 }
 
 
 if(mijnAfstand> 1){
 mijnUitleg.classList.add('weg');
+  hoeveel.classList.add('zichtbaar');
 }
 
   inputElement.addEventListener('mouseover', uitleg);
   inputElement.addEventListener('mouseout', uitlegWeg);
 
-// Afstand
-  let weergaveDrukte = document.getElementById('drukte');
-  let drukte = [0.67, 1.28, 0.78, 0.85, 0.62, 0.42, 0.67, 1.08, 0.87];
-  weergaveDrukte.innerHTML = drukte[mijnAfstand -1] + " nieuwe auto's per km";
+
 }

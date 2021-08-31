@@ -184,6 +184,10 @@ h2{
   display: none;
 }
 
+.zichtbaar{
+  display: block;
+}
+
 #UX{
   font-size: 1.5rem;
   position: absolute;
